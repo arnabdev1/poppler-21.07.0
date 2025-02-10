@@ -1,3 +1,12 @@
+// removed
+//    { "-nick", argString, &certNickname, 256, "use the certificate with the given nickname for signing" },
+//    { "-kpw", argString, &password, 256, "password for the signing key (might be missing if the key isn't password protected)" },
+//    { "-digest", argString, &digestName, 256, "name of the digest algorithm (default: SHA256)" },
+//    { "-reason", argString, &reason, 256, "reason for signing (default: no reason given)" },
+//    { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
+//    { "-h", argFlag, &printHelp, 0, "print usage information" },
+//    { "-help", argFlag, &printHelp, 0, "print usage information" },
+
 //========================================================================
 //
 // pdfsig.cc
@@ -133,18 +142,19 @@ static char password[256] = "";
 static char digestName[256] = "SHA256";
 static char reason[256] = "";
 
-static const ArgDesc argDesc[] = { { "-nssdir", argGooString, &nssDir, 0, "path to directory of libnss3 database" },
+static const ArgDesc argDesc[] = { 
+                                   { "-nssdir", argGooString, &nssDir, 0, "path to directory of libnss3 database" },
                                    { "-nocert", argFlag, &dontVerifyCert, 0, "don't perform certificate validation" },
                                    { "-dump", argFlag, &dumpSignatures, 0, "dump all signatures into current directory" },
                                    { "-sign", argInt, &signatureNumber, 0, "sign the document in the signature field with the given number" },
                                    { "-etsi", argFlag, &etsiCAdESdetached, 0, "create a signature of type ETSI.CAdES.detached instead of adbe.pkcs7.detached" },
-                                   { "-nick", argString, &certNickname, 256, "use the certificate with the given nickname for signing" },
-                                   { "-kpw", argString, &password, 256, "password for the signing key (might be missing if the key isn't password protected)" },
-                                   { "-digest", argString, &digestName, 256, "name of the digest algorithm (default: SHA256)" },
-                                   { "-reason", argString, &reason, 256, "reason for signing (default: no reason given)" },
-                                   { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
-                                   { "-h", argFlag, &printHelp, 0, "print usage information" },
-                                   { "-help", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "-nick", argString, &certNickname, 256, "use the certificate with the given nickname for signing" },
+                                //    { "-kpw", argString, &password, 256, "password for the signing key (might be missing if the key isn't password protected)" },
+                                //    { "-digest", argString, &digestName, 256, "name of the digest algorithm (default: SHA256)" },
+                                //    { "-reason", argString, &reason, 256, "reason for signing (default: no reason given)" },
+                                //    { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
+                                //    { "-h", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "-help", argFlag, &printHelp, 0, "print usage information" },
                                    { "-?", argFlag, &printHelp, 0, "print usage information" },
                                    {} };
 

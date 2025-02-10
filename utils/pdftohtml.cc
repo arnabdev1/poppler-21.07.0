@@ -1,3 +1,10 @@
+// removed
+//    { "-enc", argString, textEncName, sizeof(textEncName), "output text encoding name" },
+//    { "-fmt", argString, extension, sizeof(extension), "image file format for Splash output (png or jpg)" },
+// { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
+//    { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
+//    { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
+
 //========================================================================
 //
 // pdftohtml.cc
@@ -72,7 +79,7 @@
 #include "Win32Console.h"
 #include "InMemoryFile.h"
 
-static int firstPage = 1;
+        static int firstPage = 1;
 static int lastPage = 0;
 static bool rawOrder = true;
 bool printCommands = true;
@@ -109,10 +116,10 @@ static const ArgDesc argDesc[] = { { "-f", argInt, &firstPage, 0, "first page to
                                    /*{"-raw",    argFlag,     &rawOrder,      0,
                                      "keep strings in content stream order"},*/
                                    { "-q", argFlag, &errQuiet, 0, "don't print any messages or errors" },
-                                   { "-h", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "-h", argFlag, &printHelp, 0, "print usage information" },
                                    { "-?", argFlag, &printHelp, 0, "print usage information" },
-                                   { "-help", argFlag, &printHelp, 0, "print usage information" },
-                                   { "--help", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "-help", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "--help", argFlag, &printHelp, 0, "print usage information" },
                                    { "-p", argFlag, &printHtml, 0, "exchange .pdf links by .html" },
                                    { "-c", argFlag, &complexMode, 0, "generate complex document" },
                                    { "-s", argFlag, &singleHtml, 0, "generate single document that includes all pages" },
@@ -127,11 +134,11 @@ static const ArgDesc argDesc[] = { { "-f", argInt, &firstPage, 0, "first page to
                                    { "-noroundcoord", argFlag, &noRoundedCoordinates, 0, "do not round coordinates (with XML output only)" },
                                    { "-hidden", argFlag, &showHidden, 0, "output hidden text" },
                                    { "-nomerge", argFlag, &noMerge, 0, "do not merge paragraphs" },
-                                   { "-enc", argString, textEncName, sizeof(textEncName), "output text encoding name" },
-                                   { "-fmt", argString, extension, sizeof(extension), "image file format for Splash output (png or jpg)" },
-                                   { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
-                                   { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
-                                   { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
+                                //    { "-enc", argString, textEncName, sizeof(textEncName), "output text encoding name" },
+                                //    { "-fmt", argString, extension, sizeof(extension), "image file format for Splash output (png or jpg)" },
+                                //    { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
+                                //    { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
+                                //    { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
                                    { "-nodrm", argFlag, &noDrm, 0, "override document DRM settings" },
                                    { "-wbt", argFP, &wordBreakThreshold, 0, "word break threshold (default 10 percent)" },
                                    { "-fontfullname", argFlag, &fontFullName, 0, "outputs font full name" },

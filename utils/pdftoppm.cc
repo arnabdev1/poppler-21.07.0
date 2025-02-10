@@ -1,3 +1,13 @@
+// removed
+//    { "-displayprofile", argGooString, &displayprofilename, 0, "ICC color profile to use as the display profile" },
+//    { "-defaultgrayprofile", argGooString, &defaultgrayprofilename, 0, "ICC color profile to use as the DefaultGray color space" },
+//    { "-defaultrgbprofile", argGooString, &defaultrgbprofilename, 0, "ICC color profile to use as the DefaultRGB color space" },
+//    { "-defaultcmykprofile", argGooString, &defaultcmykprofilename, 0, "ICC color profile to use as the DefaultCMYK color space" },
+//    { "-sep", argString, sep, sizeof(sep), "single character separator between name and page number, default - " },
+//    { "-jpegopt", argGooString, &jpegOpt, 0, "jpeg options, with format <opt1>=<val1>[,<optN>=<valN>]*" },
+//    { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
+//    { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
+
 //========================================================================
 //
 // pdftoppm.cc
@@ -81,7 +91,7 @@
 #    include <lcms2.h>
 #endif
 
-static int firstPage = 1;
+        static int firstPage = 1;
 static int lastPage = 0;
 static bool printOnlyOdd = false;
 static bool printOnlyEven = false;
@@ -142,7 +152,8 @@ static bool progress = false;
 static bool printVersion = false;
 static bool printHelp = false;
 
-static const ArgDesc argDesc[] = { { "-f", argInt, &firstPage, 0, "first page to print" },
+static const ArgDesc argDesc[] = { 
+    { "-f", argInt, &firstPage, 0, "first page to print" },
                                    { "-l", argInt, &lastPage, 0, "last page to print" },
                                    { "-o", argFlag, &printOnlyOdd, 0, "print only odd pages" },
                                    { "-e", argFlag, &printOnlyEven, 0, "print only even pages" },
@@ -167,12 +178,12 @@ static const ArgDesc argDesc[] = { { "-f", argInt, &firstPage, 0, "first page to
                                    { "-mono", argFlag, &mono, 0, "generate a monochrome PBM file" },
                                    { "-gray", argFlag, &gray, 0, "generate a grayscale PGM file" },
 #ifdef USE_CMS
-                                   { "-displayprofile", argGooString, &displayprofilename, 0, "ICC color profile to use as the display profile" },
-                                   { "-defaultgrayprofile", argGooString, &defaultgrayprofilename, 0, "ICC color profile to use as the DefaultGray color space" },
-                                   { "-defaultrgbprofile", argGooString, &defaultrgbprofilename, 0, "ICC color profile to use as the DefaultRGB color space" },
-                                   { "-defaultcmykprofile", argGooString, &defaultcmykprofilename, 0, "ICC color profile to use as the DefaultCMYK color space" },
+                                //    { "-displayprofile", argGooString, &displayprofilename, 0, "ICC color profile to use as the display profile" },
+                                //    { "-defaultgrayprofile", argGooString, &defaultgrayprofilename, 0, "ICC color profile to use as the DefaultGray color space" },
+                                //    { "-defaultrgbprofile", argGooString, &defaultrgbprofilename, 0, "ICC color profile to use as the DefaultRGB color space" },
+                                //    { "-defaultcmykprofile", argGooString, &defaultcmykprofilename, 0, "ICC color profile to use as the DefaultCMYK color space" },
 #endif
-                                   { "-sep", argString, sep, sizeof(sep), "single character separator between name and page number, default - " },
+                                //    { "-sep", argString, sep, sizeof(sep), "single character separator between name and page number, default - " },
                                    { "-forcenum", argFlag, &forceNum, 0, "force page number even if there is only one page " },
 #ifdef ENABLE_LIBPNG
                                    { "-png", argFlag, &png, 0, "generate a PNG file" },
@@ -180,7 +191,7 @@ static const ArgDesc argDesc[] = { { "-f", argInt, &firstPage, 0, "first page to
 #ifdef ENABLE_LIBJPEG
                                    { "-jpeg", argFlag, &jpeg, 0, "generate a JPEG file" },
                                    { "-jpegcmyk", argFlag, &jpegcmyk, 0, "generate a CMYK JPEG file" },
-                                   { "-jpegopt", argGooString, &jpegOpt, 0, "jpeg options, with format <opt1>=<val1>[,<optN>=<valN>]*" },
+                                //    { "-jpegopt", argGooString, &jpegOpt, 0, "jpeg options, with format <opt1>=<val1>[,<optN>=<valN>]*" },
 #endif
                                    { "-overprint", argFlag, &overprint, 0, "enable overprint" },
 #ifdef ENABLE_LIBTIFF
@@ -193,8 +204,8 @@ static const ArgDesc argDesc[] = { { "-f", argInt, &firstPage, 0, "first page to
                                    { "-aa", argString, antialiasStr, sizeof(antialiasStr), "enable font anti-aliasing: yes, no" },
                                    { "-aaVector", argString, vectorAntialiasStr, sizeof(vectorAntialiasStr), "enable vector anti-aliasing: yes, no" },
 
-                                   { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
-                                   { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
+                                //    { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
+                                //    { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
 
 #ifdef UTILS_USE_PTHREADS
                                    { "-j", argInt, &numberOfJobs, 0, "number of jobs to run concurrently" },
@@ -202,10 +213,10 @@ static const ArgDesc argDesc[] = { { "-f", argInt, &firstPage, 0, "first page to
 
                                    { "-q", argFlag, &quiet, 0, "don't print any messages or errors" },
                                    { "-progress", argFlag, &progress, 0, "print progress info" },
-                                   { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
-                                   { "-h", argFlag, &printHelp, 0, "print usage information" },
-                                   { "-help", argFlag, &printHelp, 0, "print usage information" },
-                                   { "--help", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
+                                //    { "-h", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "-help", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "--help", argFlag, &printHelp, 0, "print usage information" },
                                    { "-?", argFlag, &printHelp, 0, "print usage information" },
                                    {} };
 

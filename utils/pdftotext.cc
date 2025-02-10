@@ -1,3 +1,12 @@
+// removed
+//    { "-enc", argString, textEncName, sizeof(textEncName), "output text encoding name" },
+        //    { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
+        //    { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
+//    { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
+//    { "-h", argFlag, &printHelp, 0, "print usage information" },
+//    { "-help", argFlag, &printHelp, 0, "print usage information" },
+//    { "--help", argFlag, &printHelp, 0, "print usage information" },
+
 //========================================================================
 //
 // pdftotext.cc
@@ -68,7 +77,7 @@
 #include <iomanip>
 #include "Win32Console.h"
 
-static void printInfoString(FILE *f, Dict *infoDict, const char *key, const char *text1, const char *text2, const UnicodeMap *uMap);
+        static void printInfoString(FILE *f, Dict *infoDict, const char *key, const char *text1, const char *text2, const UnicodeMap *uMap);
 static void printInfoDate(FILE *f, Dict *infoDict, const char *key, const char *fmt);
 void printDocBBox(FILE *f, PDFDoc *doc, TextOutputDev *textOut, int first, int last);
 void printWordBBox(FILE *f, PDFDoc *doc, TextOutputDev *textOut, int first, int last);
@@ -110,20 +119,20 @@ static const ArgDesc argDesc[] = { { "-f", argInt, &firstPage, 0, "first page to
                                    { "-raw", argFlag, &rawOrder, 0, "keep strings in content stream order" },
                                    { "-nodiag", argFlag, &discardDiag, 0, "discard diagonal text" },
                                    { "-htmlmeta", argFlag, &htmlMeta, 0, "generate a simple HTML file, including the meta information" },
-                                   { "-enc", argString, textEncName, sizeof(textEncName), "output text encoding name" },
+                                //    { "-enc", argString, textEncName, sizeof(textEncName), "output text encoding name" },
                                    { "-listenc", argFlag, &printEnc, 0, "list available encodings" },
                                    { "-eol", argString, textEOLStr, sizeof(textEOLStr), "output end-of-line convention (unix, dos, or mac)" },
                                    { "-nopgbrk", argFlag, &noPageBreaks, 0, "don't insert page breaks between pages" },
                                    { "-bbox", argFlag, &bbox, 0, "output bounding box for each word and page size to html.  Sets -htmlmeta" },
                                    { "-bbox-layout", argFlag, &bboxLayout, 0, "like -bbox but with extra layout bounding box data.  Sets -htmlmeta" },
                                    { "-cropbox", argFlag, &useCropBox, 0, "use the crop box rather than media box" },
-                                   { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
-                                   { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
+                                //    { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
+                                //    { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
                                    { "-q", argFlag, &quiet, 0, "don't print any messages or errors" },
-                                   { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
-                                   { "-h", argFlag, &printHelp, 0, "print usage information" },
-                                   { "-help", argFlag, &printHelp, 0, "print usage information" },
-                                   { "--help", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
+                                //    { "-h", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "-help", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "--help", argFlag, &printHelp, 0, "print usage information" },
                                    { "-?", argFlag, &printHelp, 0, "print usage information" },
                                    {} };
 

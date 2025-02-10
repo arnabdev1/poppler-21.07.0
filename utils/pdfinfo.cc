@@ -1,3 +1,8 @@
+// removed
+//    { "-enc", argString, textEncName, sizeof(textEncName), "output text encoding name" },
+//    { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
+//    { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
+
 //========================================================================
 //
 // pdfinfo.cc
@@ -69,7 +74,7 @@
 #include "StructElement.h"
 #include "Win32Console.h"
 
-static int firstPage = 1;
+        static int firstPage = 1;
 static int lastPage = 0;
 static bool printBoxes = false;
 static bool printMetadata = false;
@@ -96,14 +101,14 @@ static const ArgDesc argDesc[] = { { "-f", argInt, &firstPage, 0, "first page to
                                    { "-isodates", argFlag, &isoDates, 0, "print the dates in ISO-8601 format" },
                                    { "-rawdates", argFlag, &rawDates, 0, "print the undecoded date strings directly from the PDF file" },
                                    { "-dests", argFlag, &printDests, 0, "print all named destinations in the PDF" },
-                                   { "-enc", argString, textEncName, sizeof(textEncName), "output text encoding name" },
+                                //    { "-enc", argString, textEncName, sizeof(textEncName), "output text encoding name" },
                                    { "-listenc", argFlag, &printEnc, 0, "list available encodings" },
-                                   { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
-                                   { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
-                                   { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
-                                   { "-h", argFlag, &printHelp, 0, "print usage information" },
-                                   { "-help", argFlag, &printHelp, 0, "print usage information" },
-                                   { "--help", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
+                                //    { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
+                                //    { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
+                                //    { "-h", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "-help", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "--help", argFlag, &printHelp, 0, "print usage information" },
                                    { "-?", argFlag, &printHelp, 0, "print usage information" },
                                    {} };
 

@@ -1,3 +1,11 @@
+// removed
+//    { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
+//    { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
+//    { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
+//    { "-h", argFlag, &printHelp, 0, "print usage information" },
+//    { "-help", argFlag, &printHelp, 0, "print usage information" },
+//    { "--help", argFlag, &printHelp, 0, "print usage information" },
+
 //========================================================================
 //
 // pdfimages.cc
@@ -52,7 +60,7 @@
 #include "Error.h"
 #include "Win32Console.h"
 
-static int firstPage = 1;
+        static int firstPage = 1;
 static int lastPage = 0;
 static bool listImages = false;
 static bool enablePNG = false;
@@ -83,14 +91,14 @@ static const ArgDesc argDesc[] = { { "-f", argInt, &firstPage, 0, "first page to
                                    { "-ccitt", argFlag, &dumpCCITT, 0, "write CCITT images as CCITT files" },
                                    { "-all", argFlag, &allFormats, 0, "equivalent to -png -tiff -j -jp2 -jbig2 -ccitt" },
                                    { "-list", argFlag, &listImages, 0, "print list of images instead of saving" },
-                                   { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
-                                   { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
+                                //    { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
+                                //    { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
                                    { "-p", argFlag, &pageNames, 0, "include page numbers in output file names" },
                                    { "-q", argFlag, &quiet, 0, "don't print any messages or errors" },
-                                   { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
-                                   { "-h", argFlag, &printHelp, 0, "print usage information" },
-                                   { "-help", argFlag, &printHelp, 0, "print usage information" },
-                                   { "--help", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
+                                //    { "-h", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "-help", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "--help", argFlag, &printHelp, 0, "print usage information" },
                                    { "-?", argFlag, &printHelp, 0, "print usage information" },
                                    {} };
 

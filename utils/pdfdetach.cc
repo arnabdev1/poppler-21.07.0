@@ -1,3 +1,14 @@
+// removed
+//    { "-savefile", argString, &saveFile, sizeof(saveFile), "save the specified embedded file (file name)" },
+//    { "-o", argString, savePath, sizeof(savePath), "file name for the saved embedded file" },
+//    { "-enc", argString, textEncName, sizeof(textEncName), "output text encoding name" },
+//    { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
+//    { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
+//    { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
+//    { "-h", argFlag, &printHelp, 0, "print usage information" },
+//    { "-help", argFlag, &printHelp, 0, "print usage information" },
+//    { "--help", argFlag, &printHelp, 0, "print usage information" },
+
 //========================================================================
 //
 // pdfdetach.cc
@@ -44,7 +55,7 @@
 #include "Error.h"
 #include "Win32Console.h"
 
-static bool doList = false;
+        static bool doList = false;
 static int saveNum = 0;
 static char saveFile[128] = "";
 static bool saveAll = false;
@@ -57,16 +68,16 @@ static bool printHelp = false;
 
 static const ArgDesc argDesc[] = { { "-list", argFlag, &doList, 0, "list all embedded files" },
                                    { "-save", argInt, &saveNum, 0, "save the specified embedded file (file number)" },
-                                   { "-savefile", argString, &saveFile, sizeof(saveFile), "save the specified embedded file (file name)" },
+                                //    { "-savefile", argString, &saveFile, sizeof(saveFile), "save the specified embedded file (file name)" },
                                    { "-saveall", argFlag, &saveAll, 0, "save all embedded files" },
-                                   { "-o", argString, savePath, sizeof(savePath), "file name for the saved embedded file" },
-                                   { "-enc", argString, textEncName, sizeof(textEncName), "output text encoding name" },
-                                   { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
-                                   { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
-                                   { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
-                                   { "-h", argFlag, &printHelp, 0, "print usage information" },
-                                   { "-help", argFlag, &printHelp, 0, "print usage information" },
-                                   { "--help", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "-o", argString, savePath, sizeof(savePath), "file name for the saved embedded file" },
+                                //    { "-enc", argString, textEncName, sizeof(textEncName), "output text encoding name" },
+                                //    { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
+                                //    { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
+                                //    { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
+                                //    { "-h", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "-help", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "--help", argFlag, &printHelp, 0, "print usage information" },
                                    { "-?", argFlag, &printHelp, 0, "print usage information" },
                                    {} };
 

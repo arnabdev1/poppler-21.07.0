@@ -1,3 +1,12 @@
+// removed
+//    { "-subst", argFlag, &showSubst, 0, "show font substitutions" },
+//    { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
+//    { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
+//    { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
+//    { "-h", argFlag, &printHelp, 0, "print usage information" },
+//    { "-help", argFlag, &printHelp, 0, "print usage information" },
+//    { "--help", argFlag, &printHelp, 0, "print usage information" },
+
 //========================================================================
 //
 // pdffonts.cc
@@ -54,15 +63,16 @@ static char userPassword[33] = "\001";
 static bool printVersion = false;
 static bool printHelp = false;
 
-static const ArgDesc argDesc[] = { { "-f", argInt, &firstPage, 0, "first page to examine" },
+static const ArgDesc argDesc[] = { 
+    { "-f", argInt, &firstPage, 0, "first page to examine" },
                                    { "-l", argInt, &lastPage, 0, "last page to examine" },
-                                   { "-subst", argFlag, &showSubst, 0, "show font substitutions" },
-                                   { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
-                                   { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
-                                   { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
-                                   { "-h", argFlag, &printHelp, 0, "print usage information" },
-                                   { "-help", argFlag, &printHelp, 0, "print usage information" },
-                                   { "--help", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "-subst", argFlag, &showSubst, 0, "show font substitutions" },
+                                //    { "-opw", argString, ownerPassword, sizeof(ownerPassword), "owner password (for encrypted files)" },
+                                //    { "-upw", argString, userPassword, sizeof(userPassword), "user password (for encrypted files)" },
+                                //    { "-v", argFlag, &printVersion, 0, "print copyright and version info" },
+                                //    { "-h", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "-help", argFlag, &printHelp, 0, "print usage information" },
+                                //    { "--help", argFlag, &printHelp, 0, "print usage information" },
                                    { "-?", argFlag, &printHelp, 0, "print usage information" },
                                    {} };
 
